@@ -1,16 +1,15 @@
-<div ng-controller="forecastController">
-    <h3>Cliema de la ciudad : {{ ciudad }}</h3>
-    <div class="contenedor-cards">
-        <div ng-repeat="clima in resultadoClima.list track by $index">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>Numero : {{ $index+1 }}</h4>
-                    <h3 class="panel-title">{{ convertitFechas(clima.dt) | date: 'd MMMM y'}}</h3>
-                </div>
-                <div class="panel-body">
-                    Temperatura {{ convertirAfahrenheit(clima.main.temp) }}
-                </div>
-            </div>
-        </div>
+<p>
+    <a href="#/">Regresar inicio</a>
+</p>
+<hr> Dias:
+<a href="#/forecast/3" ng-class="{ 'bg-primary':dias==='3' }">3</a> |
+<a href="#/forecast/4" ng-class="{ 'bg-primary':dias==='4' }">4</a> |
+<a href="#/forecast/5" ng-class="{ 'bg-primary':dias==='5' }">5</a> |
+<a href="#/forecast/6" ng-class="{ 'bg-primary':dias==='6' }">6</a> |
+<a href="#/forecast/7" ng-class="{ 'bg-primary':dias==='7' }">7</a> |
+<hr/> Cliema de la ciudad : {{ ciudad }}</h3>
+<div class="contenedor-cards">
+    <div ng-repeat="clima in resultadoClima.list track by $index">
+        <clima-reporte clima-dia="clima" convert-to-standard="convertirAfahrenheit(diaTemp)" convert-to-date="convertitFechas(fecha)" date-format="d MMMM y"></clima-reporte>
     </div>
 </div>

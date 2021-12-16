@@ -1,4 +1,3 @@
-var appClima = angular.module('AppClima', ['ngRoute']);
 appClima.config(function($routeProvider) {
     $routeProvider
         .when('/', {
@@ -9,4 +8,8 @@ appClima.config(function($routeProvider) {
             templateUrl: "paginas/forecast.html",
             controller: "forecastController"
         })
-})
+        .when('/forecast/:dias', {
+            templateUrl: "paginas/forecast.html",
+            controller: "forecastController"
+        })
+});
