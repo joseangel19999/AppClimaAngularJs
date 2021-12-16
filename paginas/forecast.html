@@ -1,5 +1,16 @@
-<h3>Forecast</h3>
-<br>
-<div class="container" ng-controller="forecastController">
-    <h3>{{ciudad}}</h3>
+<div ng-controller="forecastController">
+    <h3>Cliema de la ciudad : {{ ciudad }}</h3>
+    <div class="contenedor-cards">
+        <div ng-repeat="clima in resultadoClima.list track by $index">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Numero : {{ $index+1 }}</h4>
+                    <h3 class="panel-title">{{ convertitFechas(clima.dt) | date: 'd MMMM y'}}</h3>
+                </div>
+                <div class="panel-body">
+                    Temperatura {{ convertirAfahrenheit(clima.main.temp) }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

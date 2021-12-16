@@ -1,9 +1,9 @@
 <div class="row" ng-controller="homeController">
     <div class="col-md-6 col-md-offaset-3">
-        <h4>Fore cast of city</h4>
+        <h4>Buscador de clima en tu ciudad</h4>
         <div class="form-group">
-            <input type="text" ng-model="ciudad" class="form-control">
+            <input type="text" ng-model="ciudad" class="form-control" placeholder="Ingresa tu ciudad">
         </div>
-        <a href="#/forecast" class="btn btn-primary">Buscar</a>
+        <a href="#/forecast" class="btn btn-primary" ng-disabled="ciudad.length <= 0 || ciudad==null">Buscar</a>
     </div>
 </div>
