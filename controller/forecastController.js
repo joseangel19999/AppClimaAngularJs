@@ -13,7 +13,7 @@ appClima.controller('forecastController', ['$scope', 'climaService', '$http', fu
         method: 'GET',
         url: 'http://api.openweathermap.org/data/2.5/forecast',
         params: { q: $scope.ciudad, APPID: '920c386b73f1856b55410f0c8fe9493c' },
-        header: { "Access-Control-Allow-Credentials": true }
+        header: { "Access-Control-Allow-Origin": '*' }
 
     }).success(function(data, status, headers, config) {
         console.log(status);
